@@ -6,6 +6,8 @@ sidebar:
   label: Why build this site
 ---
 
+What build this site?
+
 ## It starts from a question
 
 > Question: What course do I need to do to become a Product manager

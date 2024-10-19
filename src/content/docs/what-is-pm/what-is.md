@@ -13,3 +13,5 @@ Defining What product Management is in itself very hard, and I don't have a conc
 4. The job of the PM is to solve any and every problem that stands between the creater of the product and the consumer
 
 Then there are definition given by vetrans of the Industry
+
+- [Shape up by Ryan Singer](../what-is-pm/popular-definitions/shape-up)

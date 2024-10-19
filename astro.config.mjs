@@ -8,7 +8,7 @@ export default defineConfig({
 			title: 'Atypical Product Manager',
 			pagination: false,
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/ravivyas84/atypicalpm',
 			},
 			// components: {
       //   // Override the default `SocialIcons` component.
