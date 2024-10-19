@@ -1,0 +1,16 @@
+---
+title: About the Author
+description: About the builder of AtypicalPM.com
+sidebar:
+  order: 0
+---
+
+Hi 👋, I am Ravi Vyas. 
+
+I am a perpuelar learner and a veteran Product Manager, who as also done development, marketing, sales, customer support and dabbled in media of various forms.
+
+If you have not aready read so, please do read [why I created this site](/meta/why) 
+
+## Further reading
+
+- [My Personal Website](https://ravivyas.com)
