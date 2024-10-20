@@ -16,11 +16,11 @@ To which, no offence to anyone providing or taking a course, my response is:
 
 > You can't learn Product manager from courses
 
-Have you every come across a course for becoming a CEO or COO? I havent. Both being a CEO and being a PM have a lot in common, starting with the lack of structure.
+Have you every come across a course for becoming a CEO or COO? I haven't. Both being a CEO and being a PM have a lot in common, starting with the lack of structure.
 
 As an extension, most product managers learn from books which don't talk about Product Management.
 
-I ([who?](../about/me)) got into product managment, by doing Product Management before i got the job title of a Product Manager, and to be frank, after more than a decade of being a product Manager, I can articulate a global definition of Product Management
+I ([who?](../about/me)) got into product management, by doing Product Management before i got the job title of a Product Manager, and to be frank, after more than a decade of being a product Manager, I can articulate a global definition of Product Management
 
 ## What is Product management?
 

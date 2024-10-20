@@ -6,7 +6,7 @@ sidebar:
   # label: Why theme this like docs
 ---
 
-TLDR: Becuase as a PM, you need to know how to self learn, in many cases by reading docs. 
+TLDR: Because as a PM, you need to know how to self learn, in many cases by reading docs. 
 
 ## Never stop learning, Learn to read docs
 
