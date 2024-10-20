@@ -33,3 +33,7 @@ What I have are multiple answers, all of which sound right. You can read about [
 The site document's my learnings and collates other key resources so that anyone can self-learn and become a Product Manager.
 
 It won't do courses & certifications! They are the wrong incentives.
+
+## What to discuss or debate something.
+
+Use [Github Discussions](https://github.com/ravivyas84/atypicalpm/discussions)

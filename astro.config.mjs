@@ -47,6 +47,12 @@ export default defineConfig({
                         items: [
                             'what-is-pm/popular-definitions/shape-up'
                         ],
+                    },
+                    {
+                        label: 'What Product Management is not',
+                        items: [
+                            'what-is-pm/what-pm-is-not/idea-generator'
+                        ],
                     }]
                 },
                 {
