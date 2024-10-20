@@ -3,7 +3,11 @@ title: The Problem Solving Function
 description: A guide in my new Starlight docs site.
 ---
 
-The job of the PM is to make sure people find enough value in the product to pay
+The job of the PM is to solve any and every problem from conception of the product to users or partners finding value from the product.
+
+It can be articulating why the product or feature exists, why it is prioritized over other asks, making sure all the build processes run efficiently, keeping your stakeholders engaged and committed, keeping your leadership updated so that know that the product needs investment to making sure potential users are aware of the product's benefits and know how to use the product.
+
+Many organizations have specific teams to take up some of these problems, but the PMs needs to keep the teams alined, or get the job done if those teams don't exist.
 
 > To be articulated in the near future
 

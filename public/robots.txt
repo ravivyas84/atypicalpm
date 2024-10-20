@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://atypicalpm.com/sitemap-index.xml
