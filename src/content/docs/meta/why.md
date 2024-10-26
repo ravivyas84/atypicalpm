@@ -12,7 +12,7 @@ What build this site?
 
 > Question: What course do I need to do to become a Product manager
 
-To which, no offence to anyone providing or taking a course, my response is:
+To which, no offense to anyone providing or taking a course, my response is:
 
 > You can't learn Product manager from courses
 
@@ -34,6 +34,6 @@ The site document's my learnings and collates other key resources so that anyone
 
 It won't do courses & certifications! They are the wrong incentives.
 
-## What to discuss or debate something.
+## What to discuss or debate something
 
 Use [Github Discussions](https://github.com/ravivyas84/atypicalpm/discussions)

@@ -58,7 +58,13 @@ export default defineConfig({
                 {
                     label: 'Product Management Skills',
                     items: [
-                        'pm-skills/skills'
+                        'pm-skills/skills',
+                        {
+                            label: 'Skills',
+                            items: [
+                                'pm-skills/prioritization'
+                            ],
+                        },
                     ]},
             {
                 label: 'About',

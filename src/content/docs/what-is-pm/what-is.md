@@ -11,7 +11,7 @@ Defining What product Management is in itself very hard, and I don't have a conc
 2. [Value Driver](./my-definitions/value-driver)
 3. [Problem Solving Function](./my-definitions/problem-solving-function)
 
-Then there are definition given by vetrans of the Industry
+Then there are definition given by veterans of the Industry
 
 - [Shape up by Ryan Singer](../what-is-pm/popular-definitions/shape-up)
 
