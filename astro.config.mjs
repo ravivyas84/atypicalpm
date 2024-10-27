@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'http://atypicalpm.com/',
+	site: 'https://atypicalpm.com/',
     integrations: [starlight({
         title: 'Atypical Product Manager',
         pagination: false,

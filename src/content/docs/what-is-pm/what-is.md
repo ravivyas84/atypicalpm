@@ -5,7 +5,9 @@ description: A brief explanation of why this site exists
 #   order: 1
 ---
 
-Defining What product Management is in itself very hard, and I don't have a concrete answer. For a long time, I have been trying to put a definition which I like next to Product Management. But I realized, I will never get to it because it is different things at different places and time. Which is why we hear of *zero to one pms*, *growth pms*, *process pms*, Technical PMs etc. What I have instead, are multiple answers, all of which sound right.
+Defining what Product Management is very hard, I don't have a concrete answer.
+
+For a long time, I have been trying to build a definition which I like, but I realized, I will never get to it because it is different things at different places and time. Which is why we hear of *zero to one pms*, *growth pms*, *process pms*, Technical PMs etc. What I have instead, are multiple answers, all of which sound right.
 
 1. [The "Right X" perspective](./my-definitions/right-x)
 2. [Value Driver](./my-definitions/value-driver)
