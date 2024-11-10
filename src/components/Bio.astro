@@ -1,0 +1,83 @@
+---
+// Bio.astro
+
+export interface Contributor {
+  name: string;
+  photoUrl: string;
+}
+
+const { contributors } = Astro.props;
+console.log(contributors); // This will log to the console during the build or server render
+---
+
+<div>
+  {contributors && contributors.length > 0 && (
+      <h2>Contributors</h2>
+        <div class="bio-grid">
+      {contributors.map((contributor) => (
+        <div key={contributor.name} class="bio-card">
+          <img src={contributor.photoUrl} alt={contributor.name} class="bio-image" />
+          <div class="bio-name">{contributor.name}</div>
+        </div>
+      ))}
+      </div>
+    </>
+  )}
+  <div>
+    <a href="/meta/contributing">Want to Contribute?</a>
+  </div>
+</div>
+
+
+<style>
+
+
+  .bio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Auto adjusts columns */
+    gap: 20px; /* Adjust spacing between cards */
+  }
+  
+  .bio-card {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+  }
+
+  .bio-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .bio-content {
+    flex: 1;
+  }
+
+  .bio-name {
+    margin: 0 !important;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #1a1a1a;
+  }
+
+
+  @media (max-width: 180px) {
+    .bio-card {
+      flex-direction: column;
+      text-align: center;
+      padding: 0.2rem;
+    }
+
+    .bio-image {
+      width: 100px;
+      height: 100px;
+    }
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+title: Contribute
+description: How to contribute this site exists 
+sidebar:
+  order: 4
+  label: Contribute
+contributors:
+  - name: "Ravi Vyas"
+    photoUrl:  "/assets/ravivyas.jpeg"
+---
+import Bio from '../../../components/Bio.astro';
+
+## How do I contribute
+
+### If you know markdown and and raise Pull requests in Github
+
+You can find the content of this site here: https://github.com/ravivyas84/atypicalpm/tree/main/src/content/docs
+
+To contribute just add/update the concent avalaible. This site uses (Starlight AstroJS)[https://starlight.astro.build/getting-started/]
+
+Ideally just add a markdown file is the right page, add the frontmatter and make sure to add it to astro.config.mjs for it to show up in the nav bar. You will need to add a Photograph for the contributors section (40x40 px).
+
+### Don't know how to code?
+
+Drop me an email `atypicalpm` at `fullname ` dot `com`(see below for full name)
+
+<Bio contributors={frontmatter.contributors} />

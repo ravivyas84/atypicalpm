@@ -67,6 +67,10 @@ export default defineConfig({
                         },
                     ]},
             {
+                label: 'Concepts',
+                autogenerate: { directory: 'concepts' },
+            },
+            {
                 label: 'About',
                 autogenerate: { directory: 'about' },
             },

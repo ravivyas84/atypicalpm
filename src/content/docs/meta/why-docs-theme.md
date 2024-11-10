@@ -19,3 +19,7 @@ In fact I have a theory, that PMs need to be able to learn 80% of something new 
 ## Being a Product Manager is learning and unlearning.
 
 The content on this site will never be perfect, like an documentation they will be regularly updated.
+
+## Whats with the "More to be elobrated in the near future"
+
+This is early days for the site, and most of the context is still being written. Rather than wait for it to be perfect, the content is just put out there.

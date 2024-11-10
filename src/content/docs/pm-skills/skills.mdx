@@ -3,8 +3,12 @@ title: What skills does a PM Need
 description: A list of skills A PM may need 
 # sidebar:
 # order: 1
+contributors:
+  - name: "Ravi Vyas"
+    photoUrl:  "/assets/ravivyas.jpeg"
 ---
 import { Aside } from '@astrojs/starlight/components';
+import Bio from '../../../components/Bio.astro';
 
 <Aside type="caution">This page is WIP.</Aside>
 
@@ -19,7 +23,7 @@ import { Aside } from '@astrojs/starlight/components';
 - UI  
 - UX
 - Systems Thinking
-- [Prioritization](./prioritization)
+- [Prioritization/Saying No](./prioritization)
 
 ## Sync	
 
@@ -41,3 +45,5 @@ import { Aside } from '@astrojs/starlight/components';
 ## Operate
 
 - Incident Management
+
+<Bio contributors={frontmatter.contributors} />

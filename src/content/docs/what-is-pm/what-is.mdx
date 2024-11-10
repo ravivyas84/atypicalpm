@@ -3,7 +3,11 @@ title: What is Product Management
 description: A brief explanation of why this site exists 
 # sidebar:
 #   order: 1
+contributors:
+  - name: "Ravi Vyas"
+    photoUrl:  "/assets/ravivyas.jpeg"
 ---
+import Bio from '../../../components/Bio.astro';
 
 Defining what Product Management is very hard, I don't have a concrete answer.
 
@@ -18,3 +22,5 @@ Then there are definition given by veterans of the Industry
 - [Shape up by Ryan Singer](../what-is-pm/popular-definitions/shape-up)
 
 > More to be listed in the near future
+
+<Bio contributors={frontmatter.contributors} />

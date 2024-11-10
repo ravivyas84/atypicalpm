@@ -4,7 +4,11 @@ description: A brief explanation of why this site exists
 sidebar:
   order: 0
   label: Why build this site
+contributors:
+  - name: "Ravi Vyas"
+    photoUrl:  "/assets/ravivyas.jpeg"
 ---
+import Bio from '../../../components/Bio.astro';
 
 What build this site?
 
@@ -37,3 +41,5 @@ It won't do courses & certifications! They are the wrong incentives.
 ## What to discuss or debate something
 
 Use [Github Discussions](https://github.com/ravivyas84/atypicalpm/discussions)
+
+<Bio contributors={frontmatter.contributors} />
