@@ -1,7 +1,11 @@
 ---
 title: The Problem Solving Function
 description: A guide in my new Starlight docs site.
+contributors:
+  - name: "Ravi Vyas"
+    photoUrl:  "/assets/ravivyas.jpeg"
 ---
+import Bio from '../../../../components/Bio.astro';
 
 The job of the PM is to solve any and every problem from conception of the product to users or partners finding value from the product.
 
@@ -14,3 +18,5 @@ Many organizations have specific teams to take up some of these problems, but th
 ## Further reading
 
 - Read [Your Users are on a Journey with your Product. As a Product Manager you are a Guide](https://ravivyas.com/2021/10/31/product-is-a-journey-product-manager-is-a-guide)
+
+<Bio contributors={frontmatter.contributors} />

@@ -45,7 +45,8 @@ export default defineConfig({
                     {
                         label: 'Popular Definitions',
                         items: [
-                            'what-is-pm/popular-definitions/shape-up'
+                            'what-is-pm/popular-definitions/shape-up',
+                            'what-is-pm/popular-definitions/marty-cagan'
                         ],
                     },
                     {
