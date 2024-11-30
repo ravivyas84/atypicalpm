@@ -72,6 +72,10 @@ export default defineConfig({
                 autogenerate: { directory: 'concepts' },
             },
             {
+                label: "PM's Job Is",
+                autogenerate: { directory: 'pms-job-is' },
+            },
+            {
                 label: 'About',
                 autogenerate: { directory: 'about' },
             },
