@@ -19,6 +19,49 @@ export default defineConfig({
             defer: true,
           },
         },
+        // Add Open Graph image using the favicon
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:image",
+            content: "https://atypicalpm.com/favicon.svg",
+          },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:image:type",
+            content: "image/svg+xml",
+          },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:image:width",
+            content: "720",
+          },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:image:height",
+            content: "720",
+          },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            name: "twitter:card",
+            content: "summary_large_image",
+          },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            name: "twitter:image",
+            content: "https://atypicalpm.com/favicon.svg",
+          },
+        },
       ],
       social: {
         github: "https://github.com/ravivyas84/atypicalpm",
