@@ -19,57 +19,17 @@ export default defineConfig({
             defer: true,
           },
         },
-        // Add Open Graph image using the favicon
-        {
-          tag: "meta",
-          attrs: {
-            property: "og:image",
-            content: "https://atypicalpm.com/favicon.svg",
-          },
-        },
-        {
-          tag: "meta",
-          attrs: {
-            property: "og:image:type",
-            content: "image/svg+xml",
-          },
-        },
-        {
-          tag: "meta",
-          attrs: {
-            property: "og:image:width",
-            content: "720",
-          },
-        },
-        {
-          tag: "meta",
-          attrs: {
-            property: "og:image:height",
-            content: "720",
-          },
-        },
-        {
-          tag: "meta",
-          attrs: {
-            name: "twitter:card",
-            content: "summary_large_image",
-          },
-        },
-        {
-          tag: "meta",
-          attrs: {
-            name: "twitter:image",
-            content: "https://atypicalpm.com/favicon.svg",
-          },
-        },
+        // Note: OG image tags are now handled by the CustomHead.astro component
       ],
       social: {
         github: "https://github.com/ravivyas84/atypicalpm",
       },
-      // components: {
-      //   // Override the default `SocialIcons` component.
-      //   Footer: './src/components/footer.astro',
-      // },
+      components: {
+        // // Override the default `SocialIcons` component.
+        // Footer: './src/components/footer.astro',
+        // Override the default Head component for custom metadata
+        Head: './src/components/CustomHead.astro',
+      },
       sidebar: [
         {
           label: "Meta",
