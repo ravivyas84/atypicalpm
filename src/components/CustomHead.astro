@@ -1,0 +1,30 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+// Import the default Starlight head component
+import Default from '@astrojs/starlight/components/Head.astro';
+
+// This component extends the default Starlight <head> to support custom OG images
+const { entry } = Astro.props;
+
+// Default OG image properties
+const defaultOgImage = "/assets/default-og.png";
+const defaultWidth = "1200";
+const defaultHeight = "630";
+
+// Check if this page has a custom OG image
+const ogImage = entry.data.ogImage || defaultOgImage;
+
+// Create full URL for the OG image
+const ogImageUrl = new URL(ogImage, Astro.site).toString();
+---
+
+<!-- Use the default head component first -->
+<Default {...Astro.props} />
+
+<!-- Remove any existing OG image tags that might be set in the config -->
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content={defaultWidth} />
+<meta property="og:image:height" content={defaultHeight} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content={ogImageUrl} />
