@@ -10,6 +10,7 @@ export default defineConfig({
     starlight({
       title: "Atypical Product Manager",
       pagination: false,
+      lastUpdated: true,
       head: [
         {
           tag: "script",
