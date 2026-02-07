@@ -16,6 +16,62 @@ const ogImage = entry.data.ogImage || defaultOgImage;
 
 // Create full URL for the OG image
 const ogImageUrl = new URL(ogImage, Astro.site).toString();
+
+// --- JSON-LD Structured Data ---
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') || 'https://atypicalpm.com';
+const pageUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const pageTitle = entry.data.title;
+const pageDescription = entry.data.description || '';
+
+// Build breadcrumb items from the URL path
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const breadcrumbItems = [
+  { name: 'Home', url: siteUrl + '/' },
+  ...pathSegments.map((segment, index) => {
+    const url = siteUrl + '/' + pathSegments.slice(0, index + 1).join('/') + '/';
+    const name = segment
+      .replace(/-/g, ' ')
+      .replace(/\b\w/g, (c: string) => c.toUpperCase());
+    return { name, url };
+  }),
+];
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Atypical Product Manager',
+  url: siteUrl,
+  description: 'A knowledge base about Product Management concepts, responsibilities, and definitions.',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    item: item.url,
+  })),
+};
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: pageTitle,
+  description: pageDescription,
+  url: pageUrl,
+  image: ogImageUrl,
+  author: {
+    '@type': 'Person',
+    name: 'Ravi Vyas',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Atypical Product Manager',
+    url: siteUrl,
+  },
+};
 ---
 
 <!-- Use the default head component first -->
@@ -28,3 +84,8 @@ const ogImageUrl = new URL(ogImage, Astro.site).toString();
 <meta property="og:image:height" content={defaultHeight} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content={ogImageUrl} />
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
