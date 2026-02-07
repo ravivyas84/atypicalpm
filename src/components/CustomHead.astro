@@ -4,7 +4,7 @@ import type { Props } from '@astrojs/starlight/props';
 import Default from '@astrojs/starlight/components/Head.astro';
 
 // This component extends the default Starlight <head> to support custom OG images
-const { entry } = Astro.props;
+const { entry, lastUpdated } = Astro.props;
 
 // Default OG image properties
 const defaultOgImage = "/assets/default-og.png";
@@ -19,12 +19,28 @@ const ogImageUrl = new URL(ogImage, Astro.site).toString();
 
 // --- JSON-LD Structured Data ---
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') || 'https://atypicalpm.com';
-const pageUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const pageTitle = entry.data.title;
 const pageDescription = entry.data.description || '';
 
-// Build breadcrumb items from the URL path
+// Dates for Article schema
+const datePublished = entry.data.datePublished
+  ? new Date(entry.data.datePublished).toISOString().split('T')[0]
+  : undefined;
+const dateModified = lastUpdated
+  ? lastUpdated.toISOString().split('T')[0]
+  : datePublished;
+
+// Determine article section from the URL path
 const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const articleSection = pathSegments.length > 0
+  ? pathSegments[0].replace(/-/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase())
+  : undefined;
+
+// Determine if this is an article page (not the homepage or 404)
+const isArticlePage = entry.data.template !== 'splash' && pathSegments.length > 0;
+
+// Build breadcrumb items from the URL path
 const breadcrumbItems = [
   { name: 'Home', url: siteUrl + '/' },
   ...pathSegments.map((segment, index) => {
@@ -36,17 +52,48 @@ const breadcrumbItems = [
   }),
 ];
 
-const websiteSchema = {
-  '@context': 'https://schema.org',
+// --- Build @graph entities ---
+const organizationId = siteUrl + '/#organization';
+const websiteId = siteUrl + '/#website';
+const webPageId = canonicalUrl + '#webpage';
+const breadcrumbId = canonicalUrl + '#breadcrumb';
+const articleId = canonicalUrl + '#article';
+
+const organization = {
+  '@type': 'Organization',
+  '@id': organizationId,
+  name: 'Atypical Product Manager',
+  url: siteUrl,
+  logo: {
+    '@type': 'ImageObject',
+    url: siteUrl + '/favicon.svg',
+  },
+};
+
+const website = {
   '@type': 'WebSite',
+  '@id': websiteId,
   name: 'Atypical Product Manager',
   url: siteUrl,
   description: 'A knowledge base about Product Management concepts, responsibilities, and definitions.',
+  publisher: { '@id': organizationId },
+  inLanguage: 'en',
 };
 
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
+const webPage = {
+  '@type': 'WebPage',
+  '@id': webPageId,
+  url: canonicalUrl,
+  name: pageTitle,
+  description: pageDescription || undefined,
+  isPartOf: { '@id': websiteId },
+  breadcrumb: { '@id': breadcrumbId },
+  inLanguage: 'en',
+};
+
+const breadcrumbList = {
   '@type': 'BreadcrumbList',
+  '@id': breadcrumbId,
   itemListElement: breadcrumbItems.map((item, index) => ({
     '@type': 'ListItem',
     position: index + 1,
@@ -55,22 +102,35 @@ const breadcrumbSchema = {
   })),
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
+// Article entity — only included on article pages
+const article = isArticlePage ? {
   '@type': 'Article',
+  '@id': articleId,
   headline: pageTitle,
-  description: pageDescription,
-  url: pageUrl,
-  image: ogImageUrl,
+  description: pageDescription || undefined,
+  url: canonicalUrl,
+  image: [ogImageUrl],
   author: {
     '@type': 'Person',
     name: 'Ravi Vyas',
   },
-  publisher: {
-    '@type': 'Organization',
-    name: 'Atypical Product Manager',
-    url: siteUrl,
-  },
+  publisher: { '@id': organizationId },
+  mainEntityOfPage: { '@id': webPageId },
+  ...(datePublished ? { datePublished } : {}),
+  ...(dateModified ? { dateModified } : {}),
+  ...(articleSection ? { articleSection } : {}),
+  inLanguage: 'en',
+} : null;
+
+// Assemble the @graph array
+const graph = [organization, website, webPage, breadcrumbList];
+if (article) {
+  graph.push(article);
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': graph,
 };
 ---
 
@@ -86,6 +146,4 @@ const articleSchema = {
 <meta name="twitter:image" content={ogImageUrl} />
 
 <!-- JSON-LD Structured Data -->
-<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
-<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
